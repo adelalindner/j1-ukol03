@@ -11,6 +11,35 @@ public class Pocitac {
         return jeZapnuty;
     }
 
+    public void vytvorSouborOVelikosti(long velikost) {
+        if (!jeZapnuty) {
+            System.out.println("-- CHYBA --  Nelze vytvářet soubory, když je počítač vypnutý");
+            return;
+        }
+
+        if (pevnyDisk.getKapacita() < pevnyDisk.getVyuziteMisto() + velikost) {
+            System.out.println("-- CHYBA --  Na disku není dostatek místa");
+        } else {
+            System.out.println("Právě se vytvořil soubor o velikosti " + velikost);
+            pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() + velikost);
+        }
+    }
+
+    public void vymazSouborOVelikosti(long velikost) {
+        if (!jeZapnuty) {
+            System.out.println("-- CHYBA --  Nelze mazat soubory, když je počítač vypnutý");
+            return;
+        }
+
+        if (0 > pevnyDisk.getVyuziteMisto() - velikost) {
+            System.out.println("-- CHYBA --  Využité místo nemůže klesnout pod nulu");
+        } else {
+            System.out.println("Právě se vytvořil soubor o velikosti " + velikost);
+            pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() - velikost);
+        }
+    }
+
+
 
     public void zapniSe() {
         if (ram == null || cpu == null || pevnyDisk == null) {

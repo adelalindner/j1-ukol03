@@ -43,6 +43,18 @@ public class HlavniProgram {
         adelPocitac.vypniSe();      // Nevypise chybu, ale nic neprovede,
         adelPocitac.vypniSe();      // protoze pocitac je uz vypnut
 
+        adelPocitac.vytvorSouborOVelikosti(15);
+        adelPocitac.vymazSouborOVelikosti(15);
+
+        adelPocitac.zapniSe();
+
+        adelPocitac.vytvorSouborOVelikosti(355_195_746_303L);
+        adelPocitac.vytvorSouborOVelikosti(105_195_746_200L);
+        adelPocitac.vytvorSouborOVelikosti(50_195_746_200L);
+        adelPocitac.vytvorSouborOVelikosti(150_195_746_304L);
+        adelPocitac.vymazSouborOVelikosti(255_195_746_304L);
+
+
     }
 
 }
