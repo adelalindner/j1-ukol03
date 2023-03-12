@@ -43,7 +43,7 @@ public class Pocitac {
 
     public void zapniSe() {
         if (ram == null || cpu == null || pevnyDisk == null) {
-            System.err.println("ERROR: Počítač nelze zapnout bez všech součástí");
+            System.out.println("-- CHYBA --  Počítač nelze zapnout bez všech součástí");
             return;
         }
 
@@ -51,7 +51,7 @@ public class Pocitac {
             jeZapnuty = true;
             System.out.println("Počítač se právě zapnul");
         } else {
-            System.err.println("ERROR: Počítač již je zapnutý");
+            System.out.println("-- CHYBA -- Počítač již je zapnutý");
         }
     }
 
