@@ -2,6 +2,9 @@ package cz.czechitas.ukol3;
 
 public class Disk {
 
+    private long kapacita;
+    private long vyuziteMisto;
+
     public long getKapacita() {
         return kapacita;
     }
@@ -17,9 +20,6 @@ public class Disk {
     public void setVyuziteMisto(long vyuziteMisto) {
         this.vyuziteMisto = vyuziteMisto;
     }
-
-    private long kapacita;
-    private long vyuziteMisto
 
     @Override
     public String toString() {
