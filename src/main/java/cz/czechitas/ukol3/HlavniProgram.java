@@ -1,5 +1,10 @@
 package cz.czechitas.ukol3;
 
+import cz.czechitas.ukol3.model.Disk;
+import cz.czechitas.ukol3.model.Pamet;
+import cz.czechitas.ukol3.model.Pocitac;
+import cz.czechitas.ukol3.model.Procesor;
+
 /**
  * Spouštěcí třída celého programu
  */
@@ -8,27 +13,36 @@ public class HlavniProgram {
     public static void main(String... args) {
         System.out.println("Program spuštěn.");
 
-        Pocitac adelPocitac = new Pocitac();
-        adelPocitac.setPevnyDisk(adelDisk);
-        adelPocitac.setRam(adelPamet);
-        adelPocitac.setProcesor(adelProcesor);
+        Pocitac adelPocitac;
+        adelPocitac = new Pocitac();
 
-        Disk adelDisk = new Disk();
-        adelDisk.setKapacita(254_548_554_547L);
-        adelDisk.setVyuziteMisto(222_256_458_230L);
-
-        Pamet adelPamet = new Pamet();
-        adelPamet.setKapacita(8_000_000_000L);
-
+        System.out.println(adelPocitac.toString());
+        adelPocitac.zapniSe();
 
         Procesor adelProcesor = new Procesor();
-        adelProcesor.setRychlost(5_300_000_000_000L);
-        adelProcesor.setVyrobce("AMD");
+        adelProcesor.setRychlost(3_400_000_000_000L);
+        adelProcesor.setVyrobce("Intel");
 
+        Pamet adelPamet = new Pamet();
+        adelPamet.setKapacita(16_000_000_000L);
 
+        Disk adelDisk = new Disk();
+        adelDisk.setKapacita(255_195_746_304L);
 
+        adelPocitac.setCpu(adelProcesor);
+        adelPocitac.setRam(adelPamet);
+        adelPocitac.setPevnyDisk(adelDisk);
 
-        System.out.println("Program spuštěn.");
+        System.out.println(adelPocitac.toString());
+
+        adelPocitac.zapniSe();
+        adelPocitac.zapniSe();      // Vypise chybu, protoze pocitac uz bezi
+        System.out.println(adelPocitac.toString());
+        adelPocitac.vypniSe();
+
+        adelPocitac.vypniSe();      // Nevypise chybu, ale nic neprovede,
+        adelPocitac.vypniSe();      // protoze pocitac je uz vypnut
+
     }
 
 }
